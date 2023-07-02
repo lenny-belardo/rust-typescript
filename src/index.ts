@@ -14,4 +14,5 @@ fs.readFileSync("lines.txt").
     toString().
     split("\n").
     filter((_, index) => index % 2 === 0).
+    filter((_, index) => index > 1 && index < 4).
     forEach(line => console.log(line));

@@ -28,4 +28,12 @@ fn main() {
         .collect(); 
 
     println!("collected_hash_set: {:?}", collected_hash_set);
+
+    let collected_hash_map: HashMap<&str, usize> = vec!["this", "is", "a", "test"]
+        .into_iter()
+        .enumerate()
+        .map(|(idx, item)| (item, idx))
+        .collect(); 
+
+    println!("collected_hash_map: {:?}", collected_hash_map);
 }

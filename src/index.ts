@@ -10,12 +10,8 @@ console.log("addItemToList ", addItemToList());
 
 import fs from "fs";
 
-fs.readFile('lines.txt', 'utf8', (err: any, data: any) => {
-    if (err) {
-        console.error(err);
-
-        return;
-    }
-
-    console.log(data);
-});
+fs.readFileSync("lines.txt").
+    toString().
+    split("\n").
+    filter((_, index) => index % 2 === 0).
+    forEach(line => console.log(line));

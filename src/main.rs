@@ -1,4 +1,5 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
+use std::fs;
 
 fn main() {
     println!("Hello, world!");
@@ -25,7 +26,7 @@ fn main() {
 
     let collected_hash_set: HashSet<isize> = vec![1, 2, 3, 4]
         .into_iter()
-        .collect(); 
+        .collect();
 
     println!("collected_hash_set: {:?}", collected_hash_set);
 
@@ -36,4 +37,17 @@ fn main() {
         .collect(); 
 
     println!("collected_hash_map: {:?}", collected_hash_map);
+
+    // from the book
+    let contents_the_book_way = fs::read_to_string("lines.txt")
+        .expect("Should have been able to read the file");
+
+    println!("file contents:\n{contents_the_book_way}");
+
+    // from the course
+    let file = std::fs::read_to_string("lines.txt").unwrap();
+
+    file
+        .lines()
+        .for_each(|line| println!("{}", line));
 }

@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 fn main() {
     println!("Hello, world!");
 
@@ -20,4 +22,10 @@ fn main() {
         .collect(); 
 
     println!("collected_string: {:?}", collected_string);
+
+    let collected_hash_set: HashSet<isize> = vec![1, 2, 3, 4]
+        .into_iter()
+        .collect(); 
+
+    println!("collected_hash_set: {:?}", collected_hash_set);
 }

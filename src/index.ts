@@ -7,3 +7,15 @@ function addItemToList() {
 }
 
 console.log("addItemToList ", addItemToList());
+
+import fs from "fs";
+
+fs.readFile('/Users/raoulgheletus/Documents/practice/rust-typescript/lines.txt', 'utf8', (err: any, data: any) => {
+    if (err) {
+        console.error(err);
+
+        return;
+    }
+
+    console.log(data);
+});

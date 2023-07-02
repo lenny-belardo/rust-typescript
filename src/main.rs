@@ -13,5 +13,11 @@ fn main() {
         collected_vec.push(x)
     }
 
-    println!("{:?}", collected_vec);
+    println!("collected_vec: {:?}", collected_vec);
+
+    let collected_string: String = vec!["this", "is", "a", "test"]
+        .into_iter()
+        .collect(); 
+
+    println!("collected_string: {:?}", collected_string);
 }

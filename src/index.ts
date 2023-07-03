@@ -16,3 +16,26 @@ fs.readFileSync("lines.txt").
     filter((_, index) => index % 2 === 0).
     filter((_, index) => index > 1 && index < 4).
     forEach(line => console.log(line));
+
+enum Color {
+    Red = "red",
+    Blue = "blue",
+    Green = "green"
+}
+
+function printColor(color: Color) {
+    switch (color) {
+        case Color.Red:
+            console.log("red");
+            break;
+        case Color.Blue:
+            console.log("blue");
+            break;
+        case Color.Green:
+            console.log("green");
+            break;
+    }
+}
+
+printColor(Color.Red);
+

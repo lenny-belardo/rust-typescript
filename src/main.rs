@@ -64,4 +64,24 @@ fn main() {
         .skip(2)
         .take(2)
         .for_each(|(_, line)| println!("{}", line));
+    
+    enum Color {
+        Red,
+        Green,
+        Blue,
+        Yellow
+    }
+
+    fn print_color(color: Color) {
+        let chosen_color = match color {
+            Color::Red => println!("red"),
+            Color::Green => println!("green"),
+            Color::Blue => println!("blue"),
+            _ => println!("just color")
+        };
+
+        return chosen_color;
+    }
+
+    print_color(Color::Yellow);
 }

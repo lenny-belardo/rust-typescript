@@ -107,4 +107,26 @@ fn main() {
     let color = Color::Yellow;
 
     println!("{}", color.is_green());
+
+    #[derive(Debug)]
+    struct Custom {
+        age: usize,
+        name: String
+    }
+
+    #[derive(Debug)]
+    enum Item {
+        Number(usize),
+        String(String),
+        MyCustom(Custom)
+    }
+
+    fn append(items: &mut Vec<Item>){
+        items.push(Item::String("Hello Fem!".into()));
+    }
+
+    let mut items: Vec<Item> = vec![Item::Number(1), Item::Number(2)];
+    println!("{:?}", items);
+    append(&mut items);
+    println!("{:?}", items);
 }

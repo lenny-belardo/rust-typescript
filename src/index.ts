@@ -28,9 +28,11 @@ function printColor(color: Color) {
         case Color.Red:
             console.log("red");
             break;
+
         case Color.Blue:
             console.log("blue");
             break;
+
         case Color.Green:
             console.log("green");
             break;
@@ -39,3 +41,25 @@ function printColor(color: Color) {
 
 printColor(Color.Red);
 
+type Custom = {
+    age: number,
+    name: string,
+}
+
+type Item = number | string | Custom;
+
+function append(items: Item[]) {
+    items.push("Hello Fem!");
+
+    return items;
+}
+
+const myArray: Item[] = ["something"];
+console.log(myArray);
+append(myArray);
+console.log(myArray);
+
+const numbers: number[] = [1, 2, 3];
+console.log(numbers);
+append(numbers);
+console.log(numbers);

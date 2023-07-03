@@ -80,7 +80,6 @@ fn main() {
             return false;
         }
 
-
         fn is_green_parts(&self) -> bool {
             match self {
                 Color::Red => return false,

@@ -68,8 +68,7 @@ fn main() {
     enum Color {
         Red,
         Green,
-        Blue,
-        Yellow
+        Blue
     }
 
     fn print_color(color: Color) {
@@ -83,5 +82,5 @@ fn main() {
         return chosen_color;
     }
 
-    print_color(Color::Yellow);
+    print_color(Color::Red);
 }

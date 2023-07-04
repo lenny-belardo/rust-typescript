@@ -158,4 +158,14 @@ fn main() {
 
     println!("{:?}", practice(vec![1, 2, 3], 5));
     println!("{:?}", practice(vec![1, 2, 3], 1));
+
+    let file_name = std::env::args().nth(1)
+        .expect("the file name to be passed in");
+
+    let number_file = std::fs::read_to_string(file_name)
+        .expect("unable to read the file to string");
+
+    number_file
+        .lines()
+        .for_each(|line| println!("{}", line));
 }

@@ -129,4 +129,26 @@ fn main() {
     println!("{:?}", items);
     append(&mut items);
     println!("{:?}", items);
+
+    fn multiply_number(number: Option<usize>) -> Option<usize> {
+        // 0 or x * 5 
+        // if let Some(x) = number {
+        //     return x * 5;
+        // }
+        // return 0;
+
+        // return number.unwrap_or(0) * 5;
+
+        // None or x * 5
+        // let number = match number {
+        //     Some(x) => x * 5,
+        //     None => return None
+        // };
+        // return Some(number);
+
+        return Some(number? * 5);
+    }
+
+    println!("{:?}", multiply_number(Some(5)));
+    println!("{:?}", multiply_number(None));
 }

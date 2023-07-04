@@ -151,4 +151,11 @@ fn main() {
 
     println!("{:?}", multiply_number(Some(5)));
     println!("{:?}", multiply_number(None));
+
+    fn practice(nums: Vec<usize>, idx: usize) -> usize {
+        return nums.get(idx).unwrap_or(&idx) * 5;
+    }
+
+    println!("{:?}", practice(vec![1, 2, 3], 5));
+    println!("{:?}", practice(vec![1, 2, 3], 1));
 }

@@ -73,6 +73,20 @@ function multiplyNumber(number: number | undefined): number | undefined {
     return number * 5;
 }
 
-console.log("multiplyNumber ", multiplyNumber(undefined));
-console.log("multiplyNumber ", multiplyNumber(3));
+console.log("multiplyNumber", multiplyNumber(undefined));
+console.log("multiplyNumber", multiplyNumber(3));
 
+function practice(nums: number[], index: number): number {
+    // let multiplication = index * 5;
+
+    // if (index < nums.length) {
+    //     multiplication = nums[index] * 5;
+    // }
+
+    // return multiplication;
+
+    return (nums[index] ?? index) * 5;
+}
+
+console.log("practice", practice([1, 2, 3], 5));
+console.log("practice", practice([1, 2, 3], 1));

@@ -64,13 +64,15 @@ console.log(numbers);
 append(numbers);
 console.log(numbers);
 
-function multiplyNumber(number: number | undefined): number {
-    // return (number ?? 0) * 5;
+function multiplyNumber(number: number | undefined): number | undefined {
+    // return number === undefined ? undefined : number * 5;
     if (number === undefined) {
-        return 0;
+        return undefined;
     }
 
     return number * 5;
 }
 
 console.log("multiplyNumber ", multiplyNumber(undefined));
+console.log("multiplyNumber ", multiplyNumber(3));
+

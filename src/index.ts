@@ -101,7 +101,20 @@ function printNumbersFromTxtFile() {
         return fs.readFileSync(fileName).
             toString().
             split("\n").
-            forEach(line => console.log(line));
+            forEach(line => {
+                // if (Number(line)) {
+                //     console.log(line);
+                // } else {
+                //     console.log("Line not a number");
+                // }
+                const print = parseInt(line);
+
+                if (isNaN(print)) {
+                    console.log("Line not a number");
+                } else {
+                    console.log(print);
+                }
+            });
     }
 }
 

@@ -167,5 +167,11 @@ fn main() {
 
     number_file
         .lines()
-        .for_each(|line| println!("{}", line));
+        .for_each(|line| {
+            if let Ok(value) = line.parse::<usize>() {
+                println!("{}", value)
+            } else {
+                println!("Line not a number");
+            }
+        });
 }

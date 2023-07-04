@@ -63,3 +63,14 @@ const numbers: number[] = [1, 2, 3];
 console.log(numbers);
 append(numbers);
 console.log(numbers);
+
+function multiplyNumber(number: number | undefined): number {
+    // return (number ?? 0) * 5;
+    if (number === undefined) {
+        return 0;
+    }
+
+    return number * 5;
+}
+
+console.log("multiplyNumber ", multiplyNumber(undefined));

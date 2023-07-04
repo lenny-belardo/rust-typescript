@@ -90,3 +90,22 @@ function practice(nums: number[], index: number): number {
 
 console.log("practice", practice([1, 2, 3], 5));
 console.log("practice", practice([1, 2, 3], 1));
+
+// Error handling
+function printNumbersFromTxtFile() {
+    const fileName = process.argv[2];
+
+    if (!fileName) {
+        return null;
+    } else {
+        return fs.readFileSync(fileName).
+            toString().
+            split("\n").
+            forEach(line => console.log(line));
+    }
+}
+
+printNumbersFromTxtFile();
+
+
+

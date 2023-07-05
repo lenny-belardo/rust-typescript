@@ -196,8 +196,8 @@ fn main() {
     }
 
     let mut items = vec![Entry { count: 1 }];
-    let first = items.first_mut();
-
-    println!("{:?}", first);
+    let first: Option<&mut Entry> = items.get_mut(0);
+    let second = items.get_mut(1);
+    println!("{:?}", second);
     print_all(&items);
 }

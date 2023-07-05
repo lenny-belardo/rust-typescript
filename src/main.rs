@@ -174,4 +174,19 @@ fn main() {
                 println!("Line not a number");
             }
         });
+
+    #[derive(Debug)]
+    struct Entry {
+        count: usize
+    }
+
+    fn add_one(entry: &mut Entry) {
+        entry.count + 1;
+    }
+
+    let mut entry = Entry { count: 1 };
+    println!("{:?}", entry);
+    add_one(&mut entry);
+    println!("{:?}", entry);
+
 }

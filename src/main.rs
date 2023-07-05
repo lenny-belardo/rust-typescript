@@ -189,4 +189,15 @@ fn main() {
     add_one(&mut entry);
     println!("{:?}", entry);
 
+    fn print_all(items: &Vec<Entry>) {
+        for item in items {
+            println!("{:?}", item);
+        }
+    }
+
+    let mut items = vec![Entry { count: 1 }];
+    let first = items.first_mut();
+
+    println!("{:?}", first);
+    print_all(&items);
 }

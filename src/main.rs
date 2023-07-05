@@ -200,4 +200,11 @@ fn main() {
     let second = items.get_mut(1);
     println!("{:?}", second);
     print_all(&items);
+
+    let vec_of_numbers = vec![1, 2, 3];
+    let formatted_vec_of_numbers = vec_of_numbers
+        .iter()
+        .map(|x| x + 1);
+
+    println!("{:?}", formatted_vec_of_numbers);
 }

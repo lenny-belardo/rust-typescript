@@ -1,3 +1,4 @@
+mod shapes;
 use std::collections::{HashMap, HashSet};
 use std::fs;
 
@@ -207,4 +208,40 @@ fn main() {
         .map(|x| x + 1);
 
     println!("{:?}", formatted_vec_of_numbers);
+
+    use shapes::Circle;
+    use shapes::Rect;
+    use std::f64::consts::PI;
+
+    trait Area {
+        fn area(&self) -> f64;
+    }
+
+    impl Area for Rect {
+        fn area(&self) -> f64 {
+            return self.width * self.height;
+        }
+    }
+
+    impl Area for Circle {
+        fn area(&self) -> f64 {
+            return self.radius * self.radius * PI;
+        }
+    }
+
+    let rect = Rect {
+        x: 0.0,
+        y: 0.0,
+        width: 10.0,
+        height: 10.0,
+    };
+
+    let circ = Circle {
+        x: 0.0,
+        y: 0.0,
+        radius: 10.0,
+    };
+
+    println!("{}", circ.area());
+    println!("{}", rect.area());
 }

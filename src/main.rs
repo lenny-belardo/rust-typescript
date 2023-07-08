@@ -209,25 +209,7 @@ fn main() {
 
     println!("{:?}", formatted_vec_of_numbers);
 
-    use shapes::Circle;
-    use shapes::Rect;
-    use std::f64::consts::PI;
-
-    trait Area {
-        fn area(&self) -> f64;
-    }
-
-    impl Area for Rect {
-        fn area(&self) -> f64 {
-            return self.width * self.height;
-        }
-    }
-
-    impl Area for Circle {
-        fn area(&self) -> f64 {
-            return self.radius * self.radius * PI;
-        }
-    }
+    use crate::shapes::{area::Area, circle::Circle, rect::Rect};
 
     let rect = Rect {
         x: 0.0,
@@ -244,4 +226,5 @@ fn main() {
 
     println!("{}", circ.area());
     println!("{}", rect.area());
+    println!("{}", 6.4.area());
 }

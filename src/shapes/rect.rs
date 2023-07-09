@@ -58,14 +58,30 @@ impl IntoIterator for Rect {
     type IntoIter = RectIter;
 
     fn into_iter(self) -> Self::IntoIter {
+        return (&self).into();
+    }
+}
+
+impl IntoIterator for &Rect {
+    type Item = (f64, f64);
+
+    type IntoIter = RectIter;
+
+    fn into_iter(self) -> Self::IntoIter {
+        return self.into();
+    }
+}
+
+impl From<&Rect> for RectIter {
+    fn from(value: &Rect)  -> Self {
         return RectIter {
             points: vec![
-                (self.x, self.y),
-                (self.x + self.width, self.y),
-                (self.x, self.y + self.height),
-                (self.x + self.width, self.y + self.height)
+                (value.x, value.y),
+                (value.x + value.width, value.y),
+                (value.x, value.y + value.height),
+                (value.x + value.width, value.y + value.height)
             ],
-            idx: 0,
+            idx: 0
         };
     }
 }

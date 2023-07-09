@@ -224,4 +224,10 @@ fn main() {
     println!("{}", circ.area());
     println!("{}", rect.area());
     println!("{}", 6.4.area());
+
+    for point in &rect {
+
+    }
+
+    println!("{}", rect);
 }

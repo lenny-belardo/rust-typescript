@@ -2,6 +2,8 @@ mod shapes;
 use std::collections::{HashMap, HashSet};
 use std::fs;
 
+use crate::shapes::collisions::Collidable;
+
 fn main() {
     println!("Hello, world!");
 
@@ -212,22 +214,26 @@ fn main() {
     use crate::shapes::{area::Area, circle::Circle, rect::Rect};
 
     let rect = Rect::default();
+    let rect_2 = Rect::default();
 
     let circ = Circle {
         x: 0.0,
         y: 0.0,
-        radius: 10.0,
+        radius: 1.0,
+    };
+
+    let circ_2 = Circle {
+        x: 1.5,
+        y: 1.5,
+        radius: 4.0,
     };
 
     println!("{}", rect);
-
     println!("{}", circ.area());
     println!("{}", rect.area());
     println!("{}", 6.4.area());
 
-    for point in &rect {
-
-    }
-
-    println!("{}", rect);
+    rect.collide(&rect_2);
+    circ.collide(&circ_2);
+    rect.collide(&circ);
 }

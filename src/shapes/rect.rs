@@ -1,4 +1,5 @@
 use std::fmt::Display;
+use std::str::FromStr;
 
 use super::{area::Area, collisions::{Contains, Points}};
 
@@ -51,5 +52,23 @@ impl Points for Rect {
             (self.x, self.y + self.height),
             (self.x + self.width, self.y + self.height)
         ].into();
+    }
+}
+
+impl FromStr for Rect {
+    type Err = anyhow::Error;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        let parts = s.split("").collect::<Vec<_>>();
+        if parts.len() != 4 {
+            return Err(anyhow::anyhow!("bad rectangle from str"));
+        }
+
+        return Ok(Rect {
+            x: parts[0].parse()?,
+            y: parts[1].parse()?,
+            width: parts[2].parse()?,
+            height: parts[3].parse()?,
+        });
     }
 }
